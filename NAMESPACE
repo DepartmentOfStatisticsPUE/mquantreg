@@ -1,0 +1,3 @@
+useDynLib(mquantreg)
+importFrom(Rcpp, evalCpp)
+exportPattern("^[[:alpha:]]+")
