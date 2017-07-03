@@ -1,4 +1,27 @@
 
+#' Generalized linear m-quantile model
+#'
+#' @param formula 
+#' @param data 
+#' @param subset 
+#' @param weights 
+#' @param weights.x 
+#' @param weights.var 
+#' @param na.action 
+#' @param family 
+#' @param contrasts 
+#' @param tau 
+#' @param start.fit 
+#' @param offset 
+#' @param control 
+#' @param rlm.control 
+#' @param glmrob.control 
+#' @param ... 
+#'
+#' @return
+#' @export 
+#'
+#' @examples
 glmqm <- function(formula,
                   data,
                   subset,
@@ -166,6 +189,22 @@ glmqm <- function(formula,
 
 ###
 
+#' Fitting linear m-quantile model
+#'
+#' @param y 
+#' @param X 
+#' @param weights 
+#' @param weights.x 
+#' @param weights.var 
+#' @param q 
+#' @param control 
+#' @param rlm.control 
+#' @param ... 
+#'
+#' @return
+#' @export
+#'
+#' @examples
 lmqm.fit <- function(y,
                      X, 
                      weights, ## case.weights
@@ -187,18 +226,18 @@ lmqm.fit <- function(y,
   acc <- control$acc
   test.vec <- rlm.control$test.vec
   
-  temp.rlm <- MASS:::rlm.default(y = y,
-                                 x = X,
-                                 w = weights.var,
-                                 weights = weights,
-                                 init = init,
-                                 psi = psi,
-                                 scale.est = scale.est,
-                                 k2 = k,
-                                 method = method,
-                                 maxit = maxit,
-                                 acc = acc,
-                                 test.vec = test.vec)
+  temp.rlm <- rlm.default(y = y,
+                          x = X,
+                          w = weights.var,
+                          weights = weights,
+                          init = init,
+                          psi = psi,
+                          scale.est = scale.est,
+                          k2 = k,
+                          method = method,
+                          maxit = maxit,
+                          acc = acc,
+                          test.vec = test.vec)
   
   ## mq-estimates
   done <- FALSE
@@ -277,6 +316,22 @@ lmqm.fit <- function(y,
 
 
 ### 
+#' Fitting generalized m-quantile models
+#'
+#' @param y 
+#' @param X 
+#' @param family 
+#' @param weights 
+#' @param offset 
+#' @param q 
+#' @param control 
+#' @param glmrob.contr 
+#' @param ... 
+#'
+#' @return
+#' @export
+#'
+#' @examples
 glmqm.fit <- function(y,
                       X,
                       family, 

@@ -1,3 +1,9 @@
 useDynLib(mquantreg)
 importFrom(Rcpp, evalCpp)
 exportPattern("^[[:alpha:]]+")
+importFrom("stats", "dnorm", "gaussian", "is.empty.model", "lm.wfit",
+             "mad", "median", "model.matrix", "model.offset",
+             "model.response", "model.weights", "pbinom", "pnorm",
+             "ppois")
+importFrom(MASS, psi.huber, psi.hampel, psi.bisquare)
+importFrom(robustbase,glmrobMqle.control, glmrobBY.control, glmrobMT.control)

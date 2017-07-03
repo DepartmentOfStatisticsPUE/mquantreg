@@ -1,5 +1,19 @@
 
 
+#' Controls for generalized linear m-quantile model
+#'
+#' @param maxit 
+#' @param acc 
+#' @param k 
+#' @param psi 
+#' @param sparse 
+#' @param eps 
+#' @param lm 
+#'
+#' @return
+#' @export
+#'
+#' @examples
 glmqmControl <- function(maxit = 20, acc = 1e-04, k = 1.345, psi = psi.huber, 
                          sparse = FALSE, eps = .Machine$double.eps^(2/3), lm = 'rlm') 
 {
@@ -20,6 +34,17 @@ glmqmControl <- function(maxit = 20, acc = 1e-04, k = 1.345, psi = psi.huber,
 }
 
 
+#' Controls for robust linear model (MASS::rlm)
+#'
+#' @param init 
+#' @param scale.est 
+#' @param method 
+#' @param test.vec 
+#'
+#' @return
+#' @export
+#'
+#' @examples
 rlmControl <- function(init = "ls", scale.est = 'MAD', 
                        method = 'M', test.vec = 'resid') 
 {
@@ -36,6 +61,21 @@ rlmControl <- function(init = "ls", scale.est = 'MAD',
 }
 
 
+#' Controls for robust generalized linear model (robustbase::glmrob)
+#'
+#' @param method 
+#' @param method.control 
+#' @param weights.on.x 
+#' @param model 
+#' @param x 
+#' @param y 
+#' @param trace.lev 
+#' @param start 
+#'
+#' @return
+#' @export
+#'
+#' @examples
 glmrobControl <- function(method = 'Mqle', method.control = glmrobMqle.control(),
                           weights.on.x = 'none', model = FALSE, x = FALSE, y = FALSE,
                           trace.lev = 0, start = NULL) 

@@ -3,9 +3,10 @@ Type: Package
 Title: Generalized Linear M-Quantile Mixed models 
 Version: 0.1
 Date: 2017-07-03
-Author: Maciej Beresewicz
+Author: Maciej Bersewicz
 Maintainer: Maciej Beresewicz <maciej.beresewicz@ue.poznan.pl>
 Description: This is a collection of functions to fit m-quantile regression models for independent and hierarchical data
 License: GPL (>= 2)
-Imports: Rcpp (>= 0.12.11)
+Imports: Rcpp (>= 0.12.11), MASS, robustbase
 LinkingTo: Rcpp, RcppArmadillo
+RoxygenNote: 6.0.1
