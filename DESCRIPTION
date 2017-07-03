@@ -10,3 +10,5 @@ License: GPL (>= 2)
 Imports: Rcpp (>= 0.12.11), MASS, robustbase
 LinkingTo: Rcpp, RcppArmadillo
 RoxygenNote: 6.0.1
+URL: http://github.com/DepartmentOfStatisticsPUE/mquantreg
+BugReports: http://github.com/DepartmentOfStatisticsPUE/mquantreg/issues
